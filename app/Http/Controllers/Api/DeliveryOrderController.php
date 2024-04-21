@@ -41,6 +41,10 @@ class DeliveryOrderController extends Controller
     {
         $order = Order::findOrFail($id);
         $order->update(['status' => 'approve']);
+        $order->update([
+            'status' => 'approve',
+            'addcatatan' => '-'
+        ]);
 
         return response()->json(['message' => 'Order has been approved']);
     }

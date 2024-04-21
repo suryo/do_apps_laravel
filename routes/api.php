@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\DeliveryOrderController;
+use App\Http\Controllers\Api\DeliveryOrderController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
