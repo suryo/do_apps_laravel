@@ -86,7 +86,6 @@
                     </a>
                 </li>
 
-                <li class="nav-item"><a class="nav-link" href="{{ url('deliveryorders') }}">Delivery Order</a></li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('deliveryorders') }}">
                         Delivery Order
@@ -107,7 +106,7 @@
 
                     </a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                <!-- <li class="nav-item"><a class="nav-link" href="#">Login</a></li> -->
             </ul>
         </nav>
     </header>
