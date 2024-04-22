@@ -70,7 +70,7 @@
     <!-- Header -->
     <header>
         <div class="logo">
-            <a href="{{ url('/') }}"><img src="logo.png" alt="Logo" width="100"></a>
+            <a href="{{ url('/') }}"><img src="{{ asset('logo/DO.png') }}" alt="Logo" width="100"></a>
         </div>
         <nav>
             <ul class="nav">
@@ -105,6 +105,11 @@
 
 
                     </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="{{ asset('apk-android/app-release.apk') }}" download>
+                <i class="fab fa-android"></i> Download Android App
+                </a>
                 </li>
                 <!-- <li class="nav-item"><a class="nav-link" href="#">Login</a></li> -->
             </ul>
