@@ -18,7 +18,8 @@ class DeliveryOrderController extends Controller
     $status = $request->input('status');
 
     // Query dasar
-    $query = Order::query();
+    // $query = Order::query();
+    $query = Order::query()->where('deleted', 'false');
 
     // Filter berdasarkan status
     if ($status) {
