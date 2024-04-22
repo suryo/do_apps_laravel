@@ -7,6 +7,7 @@
             <a href="{{ route('deliveryorders.index') }}" class="btn btn-primary">All Orders</a>
             <a href="{{ route('deliveryorders.index', ['status' => 'draft']) }}" class="btn btn-info">Draft Orders</a>
             <a href="{{ route('deliveryorders.index', ['status' => 'needapproval']) }}" class="btn btn-warning">Need Approval Orders</a>
+            <a href="{{ route('deliveryorders.index', ['status' => 'approve']) }}" class="btn btn-success">Approve</a>
         </div>
         <table class="table">
             <thead>
