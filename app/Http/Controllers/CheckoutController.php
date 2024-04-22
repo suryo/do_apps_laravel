@@ -95,14 +95,14 @@ class CheckoutController extends Controller
 
     public function saveDraft(Request $request)
     {
-        dump("save draft");
+        
         // Ambil data order dan order detail dari request
         $order = json_decode($request->order, true);
         $orderDetails = json_decode($request->orderDetails, true);
         // dd($order);
         // dd($orderDetails);
         // Simpan data order ke dalam database dengan status draft
-        $newOrder = Order::create(array_merge($order, ['status' => 'draft'], ['deleted' => 'false']));
+        $newOrder = Order::updateOrCreate(['nomerorder' => $order['nomerorder']], array_merge($order, ['status' => 'draft'],['deleted' => 'false']));
         foreach ($orderDetails as $detail) {
             orderDetail::create($detail);
         }
@@ -117,12 +117,16 @@ class CheckoutController extends Controller
 
     public function submitApproval(Request $request)
     {
+       
+        //dd("approve");
         // Ambil data order dan order detail dari request
         $order = json_decode($request->order, true);
         $orderDetails = json_decode($request->orderDetails, true);
-
+        
         // Simpan data order ke dalam database dengan status needapproval
-        $newOrder = Order::create(array_merge($order, ['status' => 'needapproval'],['deleted' => 'false']));
+        // $newOrder = Order::create(array_merge($order, ['status' => 'needapproval'],['deleted' => 'false']));
+        $newOrder = Order::updateOrCreate(['nomerorder' => $order['nomerorder']], array_merge($order, ['status' => 'needapproval'],['deleted' => 'false']));
+
         foreach ($orderDetails as $detail) {            
             orderDetail::create($detail);
         }

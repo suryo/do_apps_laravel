@@ -1,0 +1,104 @@
+buat model dan migration untuk brand dengan field dibawah ini
+id (int)
+product_brand (text)
+status (varchar)
+deleted (enum : true or false)
+created_at (timestamp)
+updated_at (timestamp)
+
+
+buat model dan migration untuk product_category dengan field dibawah ini
+id (int)
+product_category_name (text)
+status (varchar)
+deleted (enum : true or false)
+created_at (timestamp)
+updated_at (timestamp)
+
+buat model dan migration untuk product dengan field dibawah ini
+id (int)
+sku (varchar)
+product_category (int)
+product_name (text)
+product_detail (text)
+product_brand (int)
+product_price (int)
+fileimages (varchar)
+status (varchar)
+deleted (enum : true or false)
+created_at (timestamp)
+updated_at (timestamp)
+slug (varchar)
+
+
+buat model dan migration untuk order dengan field dibawah ini
+id (int)
+nomerorder (int)
+iduser (int)
+status (varchar)
+itemsubtotal (int)
+tax (int)
+shippingprice (int)
+ordertotal (int)
+payment (int)
+pengiriman (varchar)
+namalengkap (varchar)
+firtsname (varchar)
+lastname (varchar)
+negara (varchar)
+provinsi (varchar)
+kota (varchar)
+kecamatan (varchar)
+alamat (text)
+kodepos (varchar)
+email (varchar)
+phone (varchar)
+addcatatan (text)
+payment_id (int)
+payment_method (varchar)
+payment_status (varchar)
+tracking_number (varchar)
+deleted (enum : true or false)
+created_at (timestamp)
+updated_at (timestamp)
+shipping_id (int)
+country_code (int)
+shiping_status (int)
+
+
+
+buat model dan migration untuk order_detail dengan field dibawah ini
+id (int)
+nomerorder (int)
+idproduct (int)
+hargaproduk (int)
+qty (int)
+subtotalproduk (int)
+note (text)
+review (varchar)
+status (varchar)
+deleted (enum : true or false)
+created_at (timestamp)
+updated_at (timestamp)
+
+
+buat model dan migration untuk cart dengan field dibawah ini
+id (int)
+user_id (int)
+product_id (int)
+quantity (int)
+total (int)
+deleted (enum : true or false)
+created_at (timestamp)
+updated_at (timestamp)
+
+
+
+
+buat crud controller dan route untuk Product
+buat view untuk crud  Product
+
+buat crud controller dan route untuk Order
+buat view untuk crud Order
+
+

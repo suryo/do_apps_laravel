@@ -15,7 +15,10 @@ class DeliveryOrderController extends Controller
     {
         $status = $request->input('status');
 
-        $query = Order::query();
+        $query = Order::query()->where('deleted', 'false'); // Menambahkan kondisi where untuk deleted
+
+
+        // $query = Order::query();
 
         if ($status) {
             $query->where('status', $status);
@@ -55,5 +58,18 @@ class DeliveryOrderController extends Controller
         $order->update(['status' => 'approved']);
         return redirect()->route('deliveryorders.index');
         // Redirect atau tampilkan pesan sukses
+    }
+
+    public function delete($id)
+    {
+        $order = Order::findOrFail($id);
+
+        // Hanya boleh dihapus jika status adalah 'revisi', 'reject', atau 'draft'
+        if (in_array($order->status, ['revisi', 'reject', 'draft'])) {
+            $order->update(['deleted' => 'true']);
+            return redirect()->route('deliveryorders.index')->with('success', 'Order successfully deleted.');
+        } else {
+            return redirect()->route('deliveryorders.index')->with('error', 'Order cannot be deleted because of its status.');
+        }
     }
 }

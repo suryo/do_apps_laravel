@@ -38,6 +38,6 @@ Route::post('/checkout/submitApproval', [CheckoutController::class, 'submitAppro
 Route::get('/deliveryorders', [DeliveryOrderController::class, 'index'])->name('deliveryorders.index');
 Route::get('/deliveryorders/{order}', [DeliveryOrderController::class,'show'])->name('deliveryorders.show');
 Route::put('/deliveryorders/{order}/approve', [DeliveryOrderController::class,'approve'])->name('deliveryorders.approve');
-
+Route::post('/deliveryorders/{id}', [DeliveryOrderController::class,'delete'])->name('deliveryorders.delete');
 
 Route::get('/product/{id}', [LandingController::class, 'product_detail'])->name('product.detail');
