@@ -9,7 +9,7 @@
     <p>SKU: {{ $product->sku }}</p>
     <p>Category: {{ $product->product_category }}</p>
     <p>Brand: {{ $product->product_brand }}</p>
-    <p>Price: ${{ $product->product_price }}</p>
+    <p>Price: Rp. {{ $product->product_price }}</p>
     <p>Status: {{ $product->status }}</p>
     <p>Description: {{ $product->product_detail }}</p>
 
